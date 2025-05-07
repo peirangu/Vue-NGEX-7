@@ -41,14 +41,12 @@
     </form>
   </div>
   <div  class="ms-4 w-100">
-    <div v-if="noResult" class="p-2 bg-warning-subtle rounded text-center mt-3 text-warning w-100">
-      Hmm...Either you didn't select any traits or we couldn't find a match. Please try again.
-    </div>
-    
     <div v-if="result" class="text-center mt-4">
       <h2 class="text-warning mt-3 fs-4 fw-bold">You are most like {{ result.name }}</h2>
       <img :src="result.image" :alt="result.name" class="character-img">
       <p class="text-light fs-5 mt-2">{{ result.description }}</p>
+    </div><div v-else-if="noResult" class="p-2 alert alert-warning text-center mt-4">
+      Hmm...Either you didn't select any traits or we couldn't find a match. Please try again.
     </div>
   </div>
 <script>
